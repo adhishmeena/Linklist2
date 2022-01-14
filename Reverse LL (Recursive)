@@ -51,24 +51,28 @@ Sample Output 2 :
 */
 
 public class Solution {
- static LinkedListNode<Integer> p;
-	public static LinkedListNode<Integer> reverseLinkedListRec(LinkedListNode<Integer> head) {
-		
+    public static LinkedListNode<Integer> reverse(LinkedListNode<Integer> head)
+    {
+     
         if(head==null || head.next==null)
-        {   p=head;
+        {
             return head;
         }
         
-        else{
-          LinkedListNode<Integer> small_node =  reverseLinkedListRec(head.next);
-             LinkedListNode<Integer> temp_node=head.next;
-             temp_node.next=head;
-            head.next=null;
-             
-        }
-        return p;
+   
+     LinkedListNode<Integer> smalloutput=  reverse(head.next);
+        LinkedListNode<Integer> temp=head.next;
+        temp.next=head;
+        head.next=null;
+           
+       
         
-	}
+        return smalloutput ;
+        
+          
+        
+        
+    }
 
 }
 
